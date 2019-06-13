@@ -1,0 +1,13 @@
+
+Redux
+    Duck
+?Bootstrap
+Reach Router
+
+Cypress
+
+Heroku
+
+Twitter Auth
+
+NodeJs, Express, JWT

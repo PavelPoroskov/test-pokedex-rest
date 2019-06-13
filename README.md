@@ -1,4 +1,4 @@
-# Test task
+# Test-Pokedex-Rest (test task)
 from https://docs.google.com/document/d/1sQfLbXlANYvDinrnrZpHucXQLkazRAwIpalPu3n689w/edit
 
 Using the open pokemon API (http://pokeapi.co/ *) develop us a pokedex with following functionalities:

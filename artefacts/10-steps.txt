@@ -1,0 +1,40 @@
+
+client
+    webpack with Standart.JS --> Hello world from client
+        simple test
+        dockerize
+
+
+    list/table view,
+        row contain only pokemon name
+        render full table row
+            store pokemon data in IndexedDB
+
+    cypress integration test use backend
+
+    ?grid view
+    add favorite
+    view profile
+    remove favorite
+
+    animation
+        load pokemon data
+        ?next/prev page
+server
+    Hello World: visit / --> Hello world from backend
+        simple test
+        dockerize 
+
+    plan api
+        /register
+        /login
+        // protected
+        /profile
+        /addfavorite
+        /removefavorite
+    ?add email auth
+    ...
+    add db (docker-compose)
+    deploy (nginx, db)
+    https
+    add Twitter auth
