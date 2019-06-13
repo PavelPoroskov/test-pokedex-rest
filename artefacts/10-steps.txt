@@ -10,7 +10,7 @@ client
         render full table row
             store pokemon data in IndexedDB
 
-    cypress integration test use backend
+    cypress integration test use backend (here we have starter kit for full app)
 
     ?grid view
     add favorite
