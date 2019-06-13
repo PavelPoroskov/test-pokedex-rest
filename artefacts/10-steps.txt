@@ -1,4 +1,7 @@
 
+1) client take from server string and render. [Docker, Test]
+2) SSR
+
 client
     webpack with Standart.JS --> Hello world from client
         simple test
@@ -7,6 +10,7 @@ client
 
     list/table view,
         row contain only pokemon name
+    //) SSR 
         render full table row
             store pokemon data in IndexedDB
 
@@ -24,6 +28,8 @@ server
     Hello World: visit / --> Hello world from backend
         simple test
         dockerize 
+
+    //) SSR
 
     plan api
         /register
