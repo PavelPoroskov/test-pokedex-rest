@@ -1,15 +1,40 @@
+workflow
+========
+)test: 
+    Cypress
+)types
+)linter: https://github.com/feross/eslint-config-standard
+)pretier
+)branching strategy: merge || rebase
+)CI: 
+    Heroku
 
-Redux
-    Duck
-?Bootstrap
-Reach Router
 
-Cypress
+realization:
+============
+ui components 
+    library with Bootstrap
+        table
+        pagination
+    react-select
+storage: Redux (Duck)
+router: Reach Router
+fetch: browser fetch
+server framework: NodeJs, Express, 
+JWT
 
-Heroku
 
-Twitter Auth
+functionality
+=============
+Social Auth
+    Twitter Auth
 
-NodeJs, Express, JWT
 
+
+
+optimization
+============
 SSR
+
+
+?Analytics

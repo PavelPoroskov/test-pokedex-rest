@@ -1,46 +1,41 @@
 
-1) client take from server string and render. [Docker, Test]
-2) SSR
+[Test, (Docker, CI)]
+?https
+1) workflow. [Standart.JS, tests, dockerize, CI]
+    //https://github.com/feross/eslint-config-standard
+    //Heroku, https
+    client Hello world from client 
+    server Hello world from server
+    client use server: client render string from server
 
-client
-    webpack with Standart.JS --> Hello world from client
-        simple test
-        dockerize
-
-
-    list/table view,
-        row contain only pokemon name
-    //) SSR 
-        render full table row
-            store pokemon data in IndexedDB
-
-    cypress integration test use backend (here we have starter kit for full app)
-
-    ?grid view
-    add favorite
-    view profile
-    remove favorite
-
-    animation
+2) client MainScreen
+    render table: only names, limit for page =12
+4) server Login API, !https
+    add Twitter auth
+    api: /register, /login, /logout
+3) client LoginScreen
+    add Router
+5) client use server Login API
+    test for signup, login, logout, protected routes, unprotected routes
+6) server API add/remove/list favorites
+    add db (docker-compose)
+7) client add/remove faborite in MainScreen
+8) client ProfileScreen
+        get data from server
+        add/remove faborite in ProfileScreen
+//SERVER END )
+9) from 2
+9.1) client: pagination for table
+9.2) client filter table: by substring
+9.3) client render table: all data for each pokemon
+    store pokemon data in IndexedDB for caching
+9.4) client filter table: by pokemon type
+10) beatify: 
+    CSS, 
+    responsive!, 
+    UX (animation)
         load pokemon data
         ?next/prev page
-server
-    Hello World: visit / --> Hello world from backend
-        simple test
-        dockerize 
-
-    //) SSR
-
-    plan api
-        /register
-        /login
-        // protected
-        /profile
-        /addfavorite
-        /removefavorite
-    ?add email auth
-    ...
-    add db (docker-compose)
-    deploy (nginx, db)
-    https
-    add Twitter auth
+11) optimize
+    SSR (server again): render first page on server
+        get time_ms render first page without SSR and with SSR
