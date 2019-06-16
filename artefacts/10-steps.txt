@@ -7,6 +7,14 @@
     client Hello world from client 
     server Hello world from server
     client use server: client render string from server
+    1.1) webpack, 
+        test [cypress, ?jest],
+            smoke.spec.js 
+        eslint, 
+        prettier
+        CI
+            dockerize
+            deploy: Heroku
 
 2) client MainScreen
     render table: only names, limit for page =12

@@ -2,7 +2,7 @@ workflow
 ========
 )test: 
     Cypress
-)types
+)types: NO becouse use https://github.com/feross/eslint-config-standard
 )linter: https://github.com/feross/eslint-config-standard
 )pretier
 )branching strategy: merge || rebase
