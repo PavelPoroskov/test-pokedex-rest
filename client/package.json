@@ -1,0 +1,45 @@
+{
+  "name": "test-pokedex-rest-client",
+  "version": "1.0.0",
+  "description": "Test task use Pokedex API",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "NODE_ENV=test BABEL_ENV=test cypress run",
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development --open",
+    "build": "webpack --config ./webpack.config.js --mode production"
+  },
+  "author": "Pavel Poroskov",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/runtime": "^7.4.5",
+    "babel-eslint": "^10.0.2",
+    "babel-loader": "^8.0.6",
+    "babel-preset-react-app": "^9.0.0",
+    "cypress": "^3.3.1",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-react": "^7.13.0",
+    "eslint-plugin-react-hooks": "^1.6.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "url-loader": "^2.0.0",
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.4",
+    "webpack-dev-server": "^3.7.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pavelporoskov/test-pokedex-rest.git",
+    "directory": "client"
+  }
+}

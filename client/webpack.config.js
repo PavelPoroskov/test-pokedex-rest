@@ -1,0 +1,106 @@
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+const appDirectory = path.resolve(__dirname)
+
+const babelLoaderConfiguration = {
+  test: /\.js$/,
+  // Add every directory that needs to be compiled by Babel during the build.
+  include: [path.resolve(appDirectory, 'src')],
+  use: {
+    loader: 'babel-loader'
+    // options: {
+    //   cacheDirectory: true
+    // }
+  }
+}
+
+// This is needed for webpack to import static images in JavaScript files.
+const imageLoaderConfiguration = {
+  test: /\.(gif|jpe?g|png|svg)$/,
+  use: {
+    loader: 'url-loader',
+    options: {
+      name: '[name].[ext]'
+    }
+  }
+}
+
+process.env.NODE_ENV = 'test'
+process.env.BABEL_ENV = 'test'
+
+module.exports = (env, options) => {
+
+  if (options.mode) {
+    process.env.NODE_ENV = options.mode
+    process.env.BABEL_ENV = options.mode
+  }
+
+  return {
+    entry: [
+      // load any web API polyfills
+      // path.resolve(appDirectory, 'polyfills-web.js'),
+      // your web-specific entry file
+      path.resolve(appDirectory, 'src/index.js')
+    ],
+
+    // configures where the build ends up
+    output: {
+      filename: 'bundle.js',
+      path: path.resolve(appDirectory, 'build'),
+      publicPath: '/'
+    },
+    devServer: {
+      contentBase: './build'
+    },
+
+    module: {
+      rules: [babelLoaderConfiguration, imageLoaderConfiguration]
+    },
+
+    // resolve: {
+    //   alias: {
+    //   },
+
+    //   extensions: ['.web.js', '.js'],
+    // },
+    plugins: [
+      new HtmlWebpackPlugin(
+        Object.assign(
+          {},
+          {
+            inject: true,
+            template: 'public/index.html'
+          },
+          options.mode === 'production'
+            ? {
+                minify: {
+                  removeComments: true,
+                  collapseWhitespace: true,
+                  removeRedundantAttributes: true,
+                  useShortDoctype: true,
+                  removeEmptyAttributes: true,
+                  removeStyleLinkTypeAttributes: true,
+                  keepClosingSlash: true,
+                  minifyJS: true,
+                  minifyCSS: true,
+                  minifyURLs: true
+                }
+              }
+            : undefined
+        )
+      ),
+
+      new webpack.DefinePlugin({
+        __DEV__: options.mode === 'development',
+        NODE_ENV: options.mode,
+        BABEL_ENV: options.mode
+      })
+    ]
+    // optimization: {
+    //   // We no not want to minimize our code.
+    //   minimize: false
+    // },
+  }
+}
