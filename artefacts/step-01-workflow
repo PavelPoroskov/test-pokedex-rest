@@ -1,0 +1,14 @@
+1.1) webpack for client, 
+    test [cypress, ?jest],
+        smoke.spec.js 
+    eslint, 
+    prettier
+    
+1.2) client Hello world
+1.3) server Hello world
+1.4) client use server
+1.5) dockerize
+1.6) deploy
+    CI
+    Heroku
+    https
