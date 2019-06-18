@@ -1,4 +1,4 @@
-import cy from 'cypress'
+// import cy from 'cypress'
 
 describe('My App', () => {
   it('loads', () => {

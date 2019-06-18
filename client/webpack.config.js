@@ -27,15 +27,9 @@ const imageLoaderConfiguration = {
   }
 }
 
-process.env.NODE_ENV = 'test'
-process.env.BABEL_ENV = 'test'
-
 module.exports = (env, options) => {
-
-  if (options.mode) {
-    process.env.NODE_ENV = options.mode
-    process.env.BABEL_ENV = options.mode
-  }
+  process.env.NODE_ENV = options.mode
+  process.env.BABEL_ENV = options.mode
 
   return {
     entry: [
@@ -75,19 +69,19 @@ module.exports = (env, options) => {
           },
           options.mode === 'production'
             ? {
-                minify: {
-                  removeComments: true,
-                  collapseWhitespace: true,
-                  removeRedundantAttributes: true,
-                  useShortDoctype: true,
-                  removeEmptyAttributes: true,
-                  removeStyleLinkTypeAttributes: true,
-                  keepClosingSlash: true,
-                  minifyJS: true,
-                  minifyCSS: true,
-                  minifyURLs: true
-                }
+              minify: {
+                removeComments: true,
+                collapseWhitespace: true,
+                removeRedundantAttributes: true,
+                useShortDoctype: true,
+                removeEmptyAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                keepClosingSlash: true,
+                minifyJS: true,
+                minifyCSS: true,
+                minifyURLs: true
               }
+            }
             : undefined
         )
       ),
