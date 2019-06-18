@@ -28,8 +28,8 @@ const imageLoaderConfiguration = {
 }
 
 module.exports = (env, options) => {
-  process.env.NODE_ENV = options.mode
-  process.env.BABEL_ENV = options.mode
+  // process.env.NODE_ENV = options.mode
+  // process.env.BABEL_ENV = options.mode
 
   return {
     entry: [

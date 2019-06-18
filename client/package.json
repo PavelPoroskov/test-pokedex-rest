@@ -4,8 +4,8 @@
   "description": "Test task use Pokedex API",
   "main": "src/index.js",
   "scripts": {
-    "test": "NODE_ENV=development BABEL_ENV=development ./node_modules/.bin/cypress run",
-    "test:open": "NODE_ENV=test BABEL_ENV=test ./node_modules/.bin/cypress open",
+    "test": "./node_modules/.bin/cypress run",
+    "test:open": "./node_modules/.bin/cypress open",
     "start": "webpack-dev-server --config ./webpack.config.js --mode development --open",
     "build": "webpack --config ./webpack.config.js --mode production"
   },
@@ -17,10 +17,11 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.4.5",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
-    "babel-preset-react-app": "^9.0.0",
     "cypress": "^3.3.1",
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
