@@ -1,5 +1,5 @@
-1.1) webpack for client, 
-    test [cypress, ?jest],
+.1.1) webpack for client, 
+    .test [cypress, ?jest],
         smoke.spec.js 
     .eslint, 
     .prettier
