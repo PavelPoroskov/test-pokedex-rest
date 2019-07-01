@@ -34,5 +34,10 @@ module.exports = {
     //"react-hooks/exhaustive-deps": "error",
 
     //"no-unused-vars": ["error", { varsIgnorePattern: "React" }]
-  }
+  },
+  "import/resolver": {
+    "webpack": {
+      "config": "webpack.config.js"
+    }
+  }  
 };

@@ -1,0 +1,14 @@
+.10.10) webpack for client, 
+    .test [cypress, ?jest],
+        smoke.spec.js 
+    .eslint, 
+    .prettier
+
+.10.20) client Hello world
+.10.30) server Hello world
+.10.40) client use server
+10.50) dockerize, add nginx
+10.60) deploy
+    CI
+    Heroku
+    https

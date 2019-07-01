@@ -53,12 +53,14 @@ module.exports = (env, options) => {
       rules: [babelLoaderConfiguration, imageLoaderConfiguration]
     },
 
-    // resolve: {
-    //   alias: {
-    //   },
-
-    //   extensions: ['.web.js', '.js'],
-    // },
+    resolve: {
+      // root: path.resolve('./src')
+      modules: [ path.resolve(__dirname, 'src'), 'node_modules' ],
+      extensions: ['.js'],
+      alias: {
+        api: path.resolve(__dirname, './src/api')
+      }
+    },
     plugins: [
       new HtmlWebpackPlugin(
         Object.assign(
