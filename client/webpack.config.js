@@ -55,11 +55,11 @@ module.exports = (env, options) => {
 
     resolve: {
       // root: path.resolve('./src')
-      modules: [ path.resolve(__dirname, 'src'), 'node_modules' ],
-      extensions: ['.js'],
-      alias: {
-        api: path.resolve(__dirname, './src/api')
-      }
+      modules: [ 'node_modules', path.resolve(__dirname, 'src') ],
+      extensions: ['.js']// ,
+      // alias: {
+      //   api: path.resolve(__dirname, './src/api')
+      // }
     },
     plugins: [
       new HtmlWebpackPlugin(
