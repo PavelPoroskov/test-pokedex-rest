@@ -7,8 +7,27 @@
 .10.20) client Hello world
 .10.30) server Hello world
 .10.40) client use server
-10.50) dockerize, add nginx
+.10.50) dockerize, add nginx
 10.60) deploy
     CI
     Heroku
     https
+
+
+docker-compose up -d --build
+
+?divide steps
+    build client (and install dependecy)
+        use VOLUME, not COPY
+    start containers
+
+    install dependency server
+        
+    build containers
+        docker-compose build
+        docker-compose start
+
+cypress in dedicated container
+    docker-compose run
+
+I think browser 'localhost/api' must return error, user is not alowed view internals

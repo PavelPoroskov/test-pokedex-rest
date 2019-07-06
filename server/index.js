@@ -7,17 +7,17 @@ var cors = require('cors')
 var app = express()
 
 // var corsOptions = {
-//     origin: 'http://localhost:' + port,
+//     origin: 'http://localhost:80',
 //     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 // }
-//app.use(cors(corsOptions))
+// app.use(cors(corsOptions))
 
 app.use(cors())
 
 
-var d = new Date()
 //app.get('/', (req, res) => res.send(`Hello from server: ${d}`))
 app.get('/', function (req, res, next) {
+  var d = new Date()
   res.json({msg: `Hello from server: ${d}`})
 })
 

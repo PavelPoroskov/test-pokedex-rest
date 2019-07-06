@@ -1,0 +1,39 @@
+version: '3.7'
+networks:
+  web:
+    driver: bridge
+  internal:
+    driver: bridge
+
+services:  
+  api: 
+    container_name: pokedex-api
+    build: 
+      context: ./server
+    tty: true
+    restart: always
+    # volumes: 
+    #   - "./server:/app"    
+    networks:      
+      - internal
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+      
+  nginx:
+    container_name: pokedex-front
+    build: 
+      context: .
+      dockerfile: nginx-front.Dockerfile
+    ports:
+      - "80:80"
+    # volumes:
+    #   - ./nginx:/etc/nginx/conf.d
+    networks:
+      - web
+      - internal
+    env_file:
+      - .env
+    links:       
+      - api

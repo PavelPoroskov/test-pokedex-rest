@@ -4,7 +4,7 @@ import { useFetch } from 'api/fetch'
 
 
 function App () {
-  const { data } = useFetch('http://localhost:8000')
+  const { data } = useFetch('/api')
 
   if (data) {
     return <div>{data.msg}</div>
