@@ -61,4 +61,46 @@ function useFetch (URL, fnTransform) {
   }
 }
 
-export { useFetch }
+function usePostFetch (URL, fnTransform) {
+  const [state, dispatch] = useReducer(reducer, initialState)
+
+  useEffect(() => {
+    let ignore = false
+
+    async function fnRequest () {
+      try {
+        const result = await fetch(URL, {
+          method: 'POST'
+        })
+        let newData = await result.json()
+        if (fnTransform) {
+          newData = fnTransform(newData)
+        }
+        if (!ignore) {
+          dispatch({ type: 'success', payload: newData })
+        }
+      } catch (err) {
+        if (!ignore) {
+          dispatch({ type: 'error', payload: err })
+        }
+      }
+    }
+
+    fnRequest()
+
+    return () => {
+      ignore = true
+    }
+  }, [URL, fnTransform])
+
+  return {
+    loading: state.loading,
+    data: state.data,
+    error: state.error
+  }
+}
+
+export {
+  useFetch,
+  usePostFetch 
+}

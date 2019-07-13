@@ -16,7 +16,8 @@ app.use(cors())
 
 
 //app.get('/', (req, res) => res.send(`Hello from server: ${d}`))
-app.get('/', function (req, res, next) {
+//app.get('/', function (req, res, next) {
+app.post('/', function (req, res, next) {
   var d = new Date()
   res.json({msg: `Hello from server: ${d}`})
 })

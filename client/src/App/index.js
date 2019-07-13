@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { useFetch } from 'api/fetch'
-
+// import { useFetch } from 'api/fetch'
+import { usePostFetch } from 'api/fetch'
 
 function App () {
-  const { data } = useFetch('/api')
+  const { data } = usePostFetch('/api')
 
   if (data) {
     return <div>{data.msg}</div>

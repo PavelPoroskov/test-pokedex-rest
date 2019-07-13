@@ -14,12 +14,13 @@ services:
     restart: always
     # volumes: 
     #   - "./server:/app"    
-    networks:      
+    networks:   
+      - web   
       - internal
     env_file:
       - .env
     ports:
-      - "8000:8000"
+      - "8000"
       
   nginx:
     container_name: pokedex-front
@@ -32,8 +33,7 @@ services:
     #   - ./nginx:/etc/nginx/conf.d
     networks:
       - web
-      - internal
     env_file:
       - .env
-    links:       
+    depends_on:       
       - api
