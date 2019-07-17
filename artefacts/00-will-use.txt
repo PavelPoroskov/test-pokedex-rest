@@ -22,6 +22,7 @@ fetch: browser fetch
 server framework: NodeJs, Express, 
 JWT
 
+redux-persist with localForage : for storage in IndexedDB
 
 functionality
 =============
